@@ -1,0 +1,15 @@
+/****************RESET*************/
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+/****************BODY**************/
+main{
+    display: inline-flex !important;
+}
+
+.hauteur{
+    height: 395px;
+}
+
