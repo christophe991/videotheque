@@ -51,7 +51,7 @@ if (empty($jeu)) : ?>
 
 <?php
 if (empty($film)) : ?>
-  <p>Aucun jeu en base de donnée</p>
+  <p>Aucun film en base de donnée</p>
 <?php else : ?>
   <?php foreach ($film as $films) : ?>
     <main>
@@ -76,7 +76,7 @@ if (empty($film)) : ?>
 
 <?php
 if (empty($serie)) : ?>
-  <p>Aucun jeu en base de donnée</p>
+  <p>Aucune serie en base de donnée</p>
 <?php else : ?>
   <?php foreach ($serie as $series) : ?>
     <main>

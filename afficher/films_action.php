@@ -1,11 +1,10 @@
 <?php
-include_once "../include/header_film.html";
-
+include_once "../include/header_accueil.html";
 ?>
 <?php
 include_once "../connexion/connexion_bdd.php";
 $bdd = new PDO("mysql:host=localhost;dbname=videotheque;charset=utf8", "root", "");
-$film = $bdd->query("SELECT titre, acteur, resume, genre, duree FROM film ");
+$film = $bdd->query("SELECT * FROM `film` WHERE genre like \'%Action%'\;");
 ?>
 <?php
 if (empty($film)) : ?>
