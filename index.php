@@ -34,14 +34,14 @@ if (empty($jeu)) : ?>
         
           <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2"> <?= $jeux["titre"]; ?></h5>
           <hr>
-          <p class="text-gray-700 text-base mb-4 resume">
+          <div class="text-gray-700 text-base mb-4 resume">
             Déscription : <?= $jeux["description"]; ?>
-          </p>
-          <p class="text-gray-700 text-base mb-4 genre">Genre : <?= $jeux["genre"]; ?></p>
-          <p class="text-gray-700 text-base mb-4 categorie">
+          </div>
+          <div class="text-gray-700 text-base mb-4 genre">Genre : <?= $jeux["genre"]; ?></div>
+          <div class="text-gray-700 text-base mb-4 categorie">
             Plate-forme : <?= $jeux["plateforme"]; ?>
-          </p>
-          <p class="info"></p>
+          </div>
+          <div class="info"></div>
 
         </div>
       </div>
@@ -59,14 +59,14 @@ if (empty($film)) : ?>
         <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm hauteur  ">
           <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2"> <?= $films["titre"]; ?></h5>
           <hr>
-          <p class="text-gray-700 text-base mb-4 resume">
+          <div class="text-gray-700 text-base mb-4 resume">
             Acteurs : <?= $films["acteur"]; ?>
-          </p>
-          <p class="text-gray-700 text-base mb-4 genre">Résumé : <?= $films["resume"]; ?></p>
-          <p class="text-gray-700 text-base mb-4 categorie">
+          </div>
+          <div class="text-gray-700 text-base mb-4 genre">Résumé : <?= $films["resume"]; ?></div>
+          <div class="text-gray-700 text-base mb-4 categorie">
             Genre : <?= $films["genre"]; ?>
-          </p>
-          <p class="info">Durée (min) : <?= $films["duree"]; ?></p>
+          </div>
+          <div class="info">Durée (min) : <?= $films["duree"]; ?></div>
 
         </div>
       </div>
@@ -84,14 +84,14 @@ if (empty($serie)) : ?>
         <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm hauteur  ">
           <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2"> <?= $series["titre"]; ?></h5>
           <hr>
-          <p class="text-gray-700 text-base mb-4 resume">
+          <div class="text-gray-700 text-base mb-4 resume">
             Acteurs : <?= $series["acteur"]; ?>
-          </p>
-          <p class="text-gray-700 text-base mb-4 genre">Résumé : <?= $series["resume"]; ?></p>
-          <p class="text-gray-700 text-base mb-4 categorie">
+          </div>
+          <div class="text-gray-700 text-base mb-4 genre">Résumé : <?= $series["resume"]; ?></div>
+          <div class="text-gray-700 text-base mb-4 categorie">
             Genre : <?= $series["genre"]; ?>
-          </p>
-          <p class="info">Saisons : <?= $series["saison"]; ?></p>
+          </div>
+          <div class="info">Nombre saisons : <?= $series["saison"]; ?></div>
 
         </div>
       </div>

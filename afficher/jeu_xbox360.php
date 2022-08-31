@@ -1,21 +1,20 @@
 <?php
-include_once "../include/header_jeu.html";
-
+include_once "../include/header_accueil.html";
 ?>
 <?php
 include_once "../connexion/connexion_bdd.php";
 $bdd = new PDO("mysql:host=localhost;dbname=videotheque;charset=utf8", "root", "");
-$jeu = $bdd->query("SELECT titre,  description,genre, plateforme FROM jeu ");
-?>
-<?php
-if (empty($jeu)) : ?>
-  <p>Aucun jeu en base de donnée</p>
+$jeu = $bdd->query("SELECT titre, description, genre, plateforme FROM jeu where plateforme = \"Xbox360\";");
+if(empty($jeu)) : ?>
+<p>Acun jeu en base de donnée</p>
 <?php else : ?>
   <?php foreach ($jeu as $jeux) : ?>
     <main>
       
       <div class="ml-10 mt-10  ">
         <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm hauteur  ">
+        
+        
           <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2"> <?= $jeux["titre"]; ?></h5>
           <hr>
           <div class="text-gray-700 text-base mb-4 resume">
@@ -33,7 +32,3 @@ if (empty($jeu)) : ?>
   <?php endforeach; ?>
 <?php endif; ?>
 
-
-<?php
-include_once "../include/footer_accueil.html";
-?>

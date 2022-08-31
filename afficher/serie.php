@@ -1,10 +1,10 @@
 <?php
-include_once "../include/header.html";
+include_once "../include/header_serie.html";
 
 ?>
 <?php
 include_once "../connexion/connexion_bdd.php";
-$bdd = new PDO("mysql:host=local;dbname=videotheque;charset=utf8", "root","");
+$bdd = new PDO("mysql:host=localhost;dbname=videotheque;charset=utf8", "root","");
 $serie = $bdd->query("SELECT titre, acteur,  resume, genre, saison FROM serie ");
 ?>
 <?php
@@ -24,7 +24,7 @@ if (empty($serie)) : ?>
           <p class="text-gray-700 text-base mb-4 categorie">
             Genre : <?= $series["genre"]; ?>
           </p>
-          <p class="info">Saisons : <?= $series["saison"]; ?></p>
+          <p class="info">Nombre saisons : <?= $series["saison"]; ?></p>
 
         </div>
       </div>
