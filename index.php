@@ -16,7 +16,7 @@ include_once "include/header_accueil.html";
 <?php
 include_once "connexion/connexion_bdd.php";
 $bdd = new PDO("mysql:host=localhost;dbname=videotheque;charset=utf8", "root", "");
-$jeu = $bdd->query("SELECT img,  titre,  description,genre, plateforme FROM jeu limit 4");
+$jeu = $bdd->query("SELECT  titre,  description,genre, plateforme FROM jeu limit 4");
 $film = $bdd->query("SELECT titre, acteur, resume, genre, duree FROM film limit 4");
 $serie = $bdd->query("SELECT titre, acteur,  resume, genre, saison FROM serie limit 4");
 ?>
@@ -29,19 +29,19 @@ if (empty($jeu)) : ?>
     <main>
       
       <div class="ml-10 mt-10  ">
-        <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm hauteur  ">
+        <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm  ">
         
         
-          <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2"> <?= $jeux["titre"]; ?></h5>
+          <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2 font-bold"> <?= $jeux["titre"]; ?></h5>
           <hr>
-          <div class="text-gray-700 text-base mb-4 resume">
-            Déscription : <?= $jeux["description"]; ?>
+          <div class="text-gray-700 text-base mb-4 mt-5 h-40 ">
+          <span class="font-bold">Déscription :</span> <?= $jeux["description"]; ?>
           </div>
-          <div class="text-gray-700 text-base mb-4 genre">Genre : <?= $jeux["genre"]; ?></div>
+          <div class="text-gray-700 text-base mb-4 genre  "><span class="font-bold">Genre :</span> <?= $jeux["genre"]; ?></div>
           <div class="text-gray-700 text-base mb-4 categorie">
-            Plate-forme : <?= $jeux["plateforme"]; ?>
+          <span class="font-bold">Plate-forme :</span> <?= $jeux["plateforme"]; ?>
           </div>
-          <div class="info"></div>
+          <div class="info"><span class="font-bold"></span></div>
 
         </div>
       </div>
@@ -55,18 +55,21 @@ if (empty($film)) : ?>
 <?php else : ?>
   <?php foreach ($film as $films) : ?>
     <main>
+      
       <div class="ml-10 mt-10  ">
-        <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm hauteur  ">
-          <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2"> <?= $films["titre"]; ?></h5>
+        <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm  ">
+        
+        
+          <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2 font-bold"> <?= $films["titre"]; ?></h5>
           <hr>
-          <div class="text-gray-700 text-base mb-4 resume">
-            Acteurs : <?= $films["acteur"]; ?>
+          <div class="text-gray-700 text-base mb-4 mt-5 h-40 ">
+          <span class="font-bold">Résumé :</span> <?= $films["resume"]; ?>
           </div>
-          <div class="text-gray-700 text-base mb-4 genre">Résumé : <?= $films["resume"]; ?></div>
+          <div class="text-gray-700 text-base mb-4 genre  "><span class="font-bold">Acteur :</span> <?= $films["acteur"]; ?></div>
           <div class="text-gray-700 text-base mb-4 categorie">
-            Genre : <?= $films["genre"]; ?>
+          <span class="font-bold">Genre :</span> <?= $films["genre"]; ?>
           </div>
-          <div class="info">Durée (min) : <?= $films["duree"]; ?></div>
+          <div class="info"><span class="font-bold">Durée :</span><?= $films["duree"]; ?></div>
 
         </div>
       </div>
@@ -74,30 +77,9 @@ if (empty($film)) : ?>
   <?php endforeach; ?>
 <?php endif; ?>
 
-<?php
-if (empty($serie)) : ?>
-  <p>Aucune serie en base de donnée</p>
-<?php else : ?>
-  <?php foreach ($serie as $series) : ?>
-    <main>
-      <div class="ml-10 mt-10  ">
-        <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm hauteur  ">
-          <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2"> <?= $series["titre"]; ?></h5>
-          <hr>
-          <div class="text-gray-700 text-base mb-4 resume">
-            Acteurs : <?= $series["acteur"]; ?>
-          </div>
-          <div class="text-gray-700 text-base mb-4 genre">Résumé : <?= $series["resume"]; ?></div>
-          <div class="text-gray-700 text-base mb-4 categorie">
-            Genre : <?= $series["genre"]; ?>
-          </div>
-          <div class="info">Nombre saisons : <?= $series["saison"]; ?></div>
 
-        </div>
-      </div>
-    </main>
-  <?php endforeach; ?>
-<?php endif; ?>
+
+
 
 
 
