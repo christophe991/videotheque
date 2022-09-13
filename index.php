@@ -4,11 +4,8 @@ include_once "include/header_accueil.html";
 <div class="m-10  w-1/2 ml-64 ">
 
   <p>
-    Pour repprendre les bases du developpement je me suis entrainner a creer un site de gestion de la base de donnée,
-    ceci et tout les jeu video que j'ai jouer, les films et serie regarder.
-    Si vous allez plus loin dans la navigation j'affiche des jeux par console et les films
-    par genre ainsie que les series.
-
+  Afin de reprendre les bases en développement, j'ai créé une vidéothèque c'est une partie de mes jeux, films et séries que je possède. 
+  Plus aura la même chose en javaFX, ceci est un début pour créer un site d'e-commerce.
   </p>
 
 
@@ -16,7 +13,7 @@ include_once "include/header_accueil.html";
 <?php
 include_once "connexion/connexion_bdd.php";
 $bdd = new PDO("mysql:host=localhost;dbname=videotheque;charset=utf8", "root", "");
-$jeu = $bdd->query("SELECT  titre,  description,genre, plateforme FROM jeu limit 4");
+$jeu = $bdd->query("SELECT  titre,  resume,genre, plateforme FROM jeu limit 4");
 $film = $bdd->query("SELECT titre, acteur, resume, genre, duree FROM film limit 4");
 $serie = $bdd->query("SELECT titre, acteur,  resume, genre, saison FROM serie limit 4");
 ?>
@@ -34,8 +31,8 @@ if (empty($jeu)) : ?>
         
           <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2 font-bold"> <?= $jeux["titre"]; ?></h5>
           <hr>
-          <div class="text-gray-700 text-base mb-4 mt-5 h-40 ">
-          <span class="font-bold">Déscription :</span> <?= $jeux["description"]; ?>
+          <div class="text-gray-700 text-base mb-4 mt-5 h-auto ">
+          <span class="font-bold">Résumé :</span> <?= $jeux["resume"]; ?>
           </div>
           <div class="text-gray-700 text-base mb-4 genre  "><span class="font-bold">Genre :</span> <?= $jeux["genre"]; ?></div>
           <div class="text-gray-700 text-base mb-4 categorie">

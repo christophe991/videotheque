@@ -5,7 +5,7 @@ include_once "../include/header_jeu.html";
 <?php
 include_once "../connexion/connexion_bdd.php";
 $bdd = new PDO("mysql:host=localhost;dbname=videotheque;charset=utf8", "root", "");
-$jeu = $bdd->query("SELECT titre,  description,genre, plateforme FROM jeu ");
+$jeu = $bdd->query("SELECT titre,  resume,genre, plateforme FROM jeu ");
 ?>
 <?php
 if (empty($jeu)) : ?>
@@ -20,8 +20,8 @@ if (empty($jeu)) : ?>
         
           <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2 font-bold"> <?= $jeux["titre"]; ?></h5>
           <hr>
-          <div class="text-gray-700 text-base mb-4 mt-5 h-40 ">
-          <span class="font-bold">Déscription :</span> <?= $jeux["description"]; ?>
+          <div class="text-gray-700 text-base mb-4 mt-5 ">
+          <span class="font-bold">Résumé :</span> <?= $jeux["resume"]; ?>
           </div>
           <div class="text-gray-700 text-base mb-4 genre  "><span class="font-bold">Genre :</span> <?= $jeux["genre"]; ?></div>
           <div class="text-gray-700 text-base mb-4 categorie">
