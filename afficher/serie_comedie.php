@@ -1,20 +1,18 @@
 <?php
 include_once "../include/header_serie.html";
-
-?>
-<?php
 include_once "../connexion/connexion_bdd.php";
-$bdd = new PDO("mysql:host=localhost;dbname=videotheque;charset=utf8", "root","");
-$serie = $bdd->query("SELECT titre, acteur,  resume, genre, saison FROM serie ");
+$bdd = new PDO("mysql:host=localhost;dbname=videotheque;charset=utf8", "root", "");
+$serie = $bdd->query("SELECT titre, acteur,resume, genre, saison FROM serie WHERE genre LIKE \"%Comédie%\";");
 ?>
 
 <?php
 if (empty($serie)) : ?>
-  <p>Aucune serie en base de donnée</p>
+  <p>Aucun serie en base de donnée</p>
 <?php else : ?>
   <?php foreach ($serie as $series) : ?>
     <main>
-    <div class="ml-10 mt-10  ">
+      
+      <div class="ml-10 mt-10  ">
         <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm  ">
         
         
@@ -30,6 +28,8 @@ if (empty($serie)) : ?>
           <div class="info"><span class="font-bold">Nombre de saison :</span> <?= $series["saison"]; ?> </div>
 
         </div>
+      </div>
     </main>
   <?php endforeach; ?>
 <?php endif; ?>
+

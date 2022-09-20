@@ -20,7 +20,7 @@ if (empty($jeu)) : ?>
         
           <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2 font-bold"> <?= $jeux["titre"]; ?></h5>
           <hr>
-          <div class="text-gray-700 text-base mb-4 mt-5 ">
+          <div class="text-gray-700 text-base mb-4 mt-5 h-40 ">
           <span class="font-bold">Résumé :</span> <?= $jeux["resume"]; ?>
           </div>
           <div class="text-gray-700 text-base mb-4 genre  "><span class="font-bold">Genre :</span> <?= $jeux["genre"]; ?></div>

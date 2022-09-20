@@ -5,7 +5,7 @@ include_once "../include/header_film.html";
 <?php
 include_once "../connexion/connexion_bdd.php";
 $bdd = new PDO("mysql:host=localhost;dbname=videotheque;charset=utf8", "root", "");
-$film = $bdd->query("SELECT titre, acteur, resume, genre, duree FROM film ");
+$film = $bdd->query("SELECT titre, acteur, resume, genre, duree FROM film WHERE genre like  \"%Horreur%\";");
 ?>
 <?php
 if (empty($film)) : ?>
@@ -13,6 +13,7 @@ if (empty($film)) : ?>
 <?php else : ?>
   <?php foreach ($film as $films) : ?>
     <main>
+      
     <div class="ml-10 mt-10  ">
         <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm  ">
         
