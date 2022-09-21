@@ -17,7 +17,7 @@ $jeu = $bdd->query("SELECT  titre,  resume,genre, plateforme FROM jeu limit 4");
 $film = $bdd->query("SELECT titre, acteur, resume, genre, duree FROM film limit 4");
 $serie = $bdd->query("SELECT titre, acteur,  resume, genre, saison FROM serie limit 4");
 ?>
-<h4 class="text-center font-bold text-xl">Liste des jeux vidéo</h4>
+<h4 class="text-center font-bold text-xl">Jeux vidéo</h4>
 <?php
 if (empty($jeu)) : ?>
   <p>Aucun jeu en base de donnée</p>
@@ -45,7 +45,7 @@ if (empty($jeu)) : ?>
     </main>
   <?php endforeach; ?>
 <?php endif; ?>
-<h4 class="text-center font-bold text-xl mt-20">Liste des films</h4>
+<h4 class="text-center font-bold text-xl mt-20">Films</h4>
 
 <?php
 if (empty($film)) : ?>
@@ -74,7 +74,7 @@ if (empty($film)) : ?>
     </main>
   <?php endforeach; ?>
 <?php endif; ?>
-<h4 class="text-center font-bold text-xl mt-20">Liste des series</h4>
+<h4 class="text-center font-bold text-xl mt-20">Series</h4>
 <?php
 if (empty($serie)) : ?>
   <p>Aucun serie en base de donnée</p>

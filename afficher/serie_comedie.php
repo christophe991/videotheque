@@ -4,6 +4,7 @@ include_once "../connexion/connexion_bdd.php";
 $bdd = new PDO("mysql:host=localhost;dbname=videotheque;charset=utf8", "root", "");
 $serie = $bdd->query("SELECT titre, acteur,resume, genre, saison FROM serie WHERE genre LIKE \"%Comédie%\";");
 ?>
+<h4 class="text-center font-bold text-xl  mt-20">Séries Comédie</h4>
 
 <?php
 if (empty($serie)) : ?>
@@ -32,4 +33,8 @@ if (empty($serie)) : ?>
     </main>
   <?php endforeach; ?>
 <?php endif; ?>
+<?php
+include_once "../include/footer_accueil.html";
+
+?>
 

@@ -3,7 +3,11 @@ include_once "../include/header_jeu.html";
 include_once "../connexion/connexion_bdd.php";
 $bdd = new PDO("mysql:host=localhost;dbname=videotheque;charset=utf8", "root", "");
 $jeu = $bdd->query("SELECT titre, resume, genre, plateforme FROM jeu where plateforme = \"PC\";");
+?>
+<h4 class="text-center font-bold text-xl  mt-20">Jeux PC</h4>
+<?php
 if(empty($jeu)) : ?>
+
 <p>Aucun jeu en base de donnée</p>
 <?php else : ?>
   <?php foreach ($jeu as $jeux) : ?>
@@ -29,3 +33,7 @@ if(empty($jeu)) : ?>
     </main>
   <?php endforeach; ?>
 <?php endif; ?>
+<?php
+include_once "../include/footer_accueil.html";
+
+?>

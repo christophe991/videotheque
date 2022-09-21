@@ -1,6 +1,7 @@
 <?php
 include_once "../include/header_jeu.html";
 ?>
+<h4 class="text-center font-bold text-xl  mt-20">Jeux Xbox360</h4>
 <?php
 include_once "../connexion/connexion_bdd.php";
 $bdd = new PDO("mysql:host=localhost;dbname=videotheque;charset=utf8", "root", "");
@@ -31,4 +32,8 @@ if(empty($jeu)) : ?>
     </main>
   <?php endforeach; ?>
 <?php endif; ?>
+<?php
+include_once "../include/footer_accueil.html";
+
+?>
 

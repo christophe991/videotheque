@@ -7,6 +7,7 @@ include_once "../connexion/connexion_bdd.php";
 $bdd = new PDO("mysql:host=localhost;dbname=videotheque;charset=utf8", "root", "");
 $jeu = $bdd->query("SELECT titre,  resume,genre, plateforme FROM jeu ");
 ?>
+<h4 class="text-center font-bold text-xl  mt-20">Jeux vidéo</h4>
 <?php
 if (empty($jeu)) : ?>
   <p>Aucun jeu en base de donnée</p>

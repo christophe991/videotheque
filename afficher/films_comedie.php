@@ -6,6 +6,7 @@ include_once "../connexion/connexion_bdd.php";
 $bdd = new PDO("mysql:host=localhost;dbname=videotheque;charset=utf8", "root", "");
 $film = $bdd->query("SELECT titre, acteur, resume, genre, duree FROM film WHERE genre like  \"%Comedie%\";");
 ?>
+<h4 class="text-center font-bold text-xl  mt-20">Films Comédie</h4>
 <?php
 if (empty($film)) : ?>
   <p>Aucun film en base de donnée</p>
@@ -32,3 +33,7 @@ if (empty($film)) : ?>
     </main>
   <?php endforeach; ?>
 <?php endif; ?>
+<?php
+include_once "../include/footer_accueil.html";
+
+?>

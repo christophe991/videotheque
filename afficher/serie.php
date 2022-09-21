@@ -2,6 +2,7 @@
 include_once "../include/header_serie.html";
 
 ?>
+<h4 class="text-center font-bold text-xl mt-20">Séries</h4>
 <?php
 include_once "../connexion/connexion_bdd.php";
 $bdd = new PDO("mysql:host=localhost;dbname=videotheque;charset=utf8", "root","");
@@ -33,3 +34,7 @@ if (empty($serie)) : ?>
     </main>
   <?php endforeach; ?>
 <?php endif; ?>
+<?php
+include_once "../include/footer_accueil.html";
+
+?>
