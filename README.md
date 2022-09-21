@@ -1,5 +1,5 @@
 # videotheque
-Vidéothèque des films, jeux vidéo et séries que je possède
+Vidéothèque une partie des films, jeux vidéo et séries que je possède
 
 1.Création de la base de données sur MySQL avec Jmerise
 
